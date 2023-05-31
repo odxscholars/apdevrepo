@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#checkmark {
+    background-image: url('sprites.png');
+    background-size: 410px 396px;
+    background-position: -164px -366px;
+    height: 12px;
+    width: 12px;
+}
+#instadog {
+    max-width: 100%;
+}
+#like {
+    background-image: url('sprites2.png');
+    background-size: 411px 393px;
+
+    background-position: 0px -319px;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+#comment {
+    background-image: url('sprites2.png');
+    background-size: 411px 393px;
+
+    background-position: -125px -294px;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+#share {
+    background-image: url('sprites2.png');
+    background-size: 411px 393px;
+
+    background-position: -200px -294px;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+#bookmark {
+    background-image: url('sprites2.png');
+    background-size: 411px 393px;
+
+    background-position: -175px -344px;
+    height: 24px;
+    width: 24px;
+    margin-left: 321px
+}
+img {
+    border: none;
+}
