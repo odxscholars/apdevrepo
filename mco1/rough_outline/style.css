@@ -1,0 +1,38 @@
+#outer_top_bar {
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: -20%;
+    width: 100%;
+    height: 30%;
+}
+#inner_top_bar {
+    background-color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 10%;
+}
+#left_bar {
+    background-color: gray;
+    float: left; 
+    position: sticky;
+    top: 10%;
+    width: 18%;
+    height: 90%;
+}
+.post {
+    background-color: lightgray;
+    float: right; 
+    width: 50%;
+    height: 30%;
+    margin-right: 25%;
+    margin-top: 40px;
+}
+body {
+    margin: 0;
+}
