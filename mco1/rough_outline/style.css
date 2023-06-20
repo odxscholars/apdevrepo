@@ -1,38 +1,59 @@
-#outer_top_bar {
+.text_post {
     background-color: darkgray;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: -20%;
-    width: 100%;
-    height: 30%;
+    width: 45%;
+    height: 55%;
+    margin-top: 4%;
+    padding: 5px;
 }
-#inner_top_bar {
+.image_post{
     background-color: darkgray;
+    width: 45%;
+    height: 55%;
+    margin-top: 4%;
+    padding: 5px;
+}
+.upper_div {
+    background-color: lightgray;
+    height: 15%;
+    display: flex;
+}
+.lower_div {
+    height: 85%
+}
+.lower_left_div {
+    background-color: gray;
+    float: left;
+    width: 7%;
+    height: 100%;
+}
+.lower_right_div {
+    background-color: cyan;
+    float: right;
+    width: 93%;
+    height: 94%;
+}
+.post_content {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 10%;
 }
-#left_bar {
-    background-color: gray;
-    float: left; 
-    position: sticky;
-    top: 10%;
-    width: 18%;
-    height: 90%;
-}
-.post {
+.post_lowerbar {
     background-color: lightgray;
-    float: right; 
-    width: 50%;
-    height: 30%;
-    margin-right: 25%;
-    margin-top: 40px;
+    width: 100%;
+    height: 6%;
 }
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sample_image {
+    background-color: black;
+    height: 99%;
+    width: 75%;
 }
