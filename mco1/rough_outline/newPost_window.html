@@ -1,0 +1,166 @@
+<html>
+	<head>
+	<title></title>
+	<style type="text/css">
+		span{
+			display:inline;
+		}
+		.postTitle{
+			border: 1px solid #ccc;
+			width: 650px;
+			height: 50px;
+		}
+		.newPost{
+			overflow: hidden;
+			border: 1px solid #000;
+			background-color: #f1f1f1;
+		}
+		.newPost button{
+			background-color: inherit;
+			float: left;
+			border: 2px solid #ccc;
+			padding: 20px 139.66px;
+			font-size: 17px;
+			cursor:pointer;
+		}
+		.newPost button:hover{
+			background-color: #ddd;
+		}
+		
+		.newPost button.active{
+			background-color: #ccc;
+		}
+		
+		.tabcontent{
+			display: none;
+			padding: 10px 10px;
+		}
+		#description{
+			height: 450px;
+			width: 630px;
+		}
+		#postimage{
+			background-color: #ccc;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+		#postimage: hover{
+			background-color: #ddd;
+		}
+		.submit{
+			height: 35px;
+			width: 100px;
+			margin: 10px 0px;
+			background-color: #FFFFFF;
+			border: 1px solid #000;
+			cursor:pointer;
+		}
+		
+		.closer{
+			float: right;
+			cursor: pointer;
+			font-style: bold;
+		}
+		
+		#container{
+			height: 645px;
+			width: 650px;
+			background-color: #FFFFFF;
+			border: 2px solid #000;
+		}
+		
+		#upload {
+			display:none;
+			background-color: #ccc;
+			color: #ffffff;
+			padding: 10px 20px;
+		}
+		
+		#preview{
+			display:none;
+		}
+		#imgContent{
+			border: 1px solid black;
+		}
+		label {
+			cursor: pointer;
+			color: #ffffff;
+			
+		}
+	</style>
+	
+	</head>
+	<body>
+		<div id="container">
+		<span style="float: left">New Post</span>
+		<span class="closer" onclick="this.parentElement.style.display='none'">x</span><br>
+		<textarea class="postTitle" name="postTitle" placeholder="Post title..."></textarea>
+		<div class="newPost">
+			<button class="tablinks" onclick="switchPost(event, 'postMSG')" id="defaultOpen"> Post </button>
+			<button class="tablinks" onclick="switchPost(event, 'postIMG')"> Image </button>
+		</div>
+		
+		<div id="postMSG" class="tabcontent">
+			<form>
+				<textarea id="description" name="description" placeholder="Post description..."></textarea>
+				<input type="submit" class="submit" id="submit" value="POST">
+			</form>
+		</div>
+		<div id="postIMG" class="tabcontent">
+			<form>
+				<label id="postimage" onclick="showFile()">
+				<input type="file" id="upload" name="postimage">
+				<span id="gone">Select Image</span>
+				</label><br>
+				
+				<input type="submit" class="submit" id="submit" value="POST" >
+			</form>
+			<button id="preview" onclick="show_image()">preview</button>
+			<div id="imgContent"></div>
+		</div>
+		</div>
+		
+		<script type="text/javascript">
+			function switchPost(evt, postType) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(postType).style.display = "block";
+			evt.currentTarget.className += " active";
+			}
+			document.getElementById("defaultOpen").click();
+			
+			function showFile(){
+				var upload, gone, preview;
+				upload = document.getElementById("upload");
+				gone = document.getElementById("gone");
+				preview = document.getElementById("preview");
+				gone.style.display = "none";
+				upload.style.display = "inline";
+				preview.style.display = "list-item";
+			}
+			
+			function show_image() {
+				
+					var file = document.getElementById('upload').files[0];
+					var reader  = new FileReader();
+					reader.onload = function(e)  {
+						var image = document.createElement("img");
+						image.src = e.target.result;
+						image.width = 450;
+						image.height = 345;
+						
+						document.getElementById("imgContent").appendChild(image);
+					}
+					reader.readAsDataURL(file);
+				
+			}
+		</script>
+	</body>
+</html>
